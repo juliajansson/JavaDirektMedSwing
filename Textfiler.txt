@@ -1,0 +1,59 @@
+Metoder returnerar värden - skriver inte ut.
+
+BufferedReader eller Scanner för inläsning
+
+Läsa textfiler - inte System.in
+
+Text respektive binärfiler - ljud
+     			   - bild
+			   - program
+
+Textfiler skiljer sig från ordbehandlingsprogram
+
+------------------------------------------------
+
+Textfiler - inströmmar - BufferedReader
+
+BufferedReader inström = new BufferedReader ( new FileReader("lista.txt"));
+
+String t = inström.readLine();
+
+se Utskrift.java
+
+---------------------------------------------
+
+UTF-8 lagrar 1 byte om vanligt tecken - 2 om ovanligare osv
+Standard
+
+Olika sätt att koda på - finns sätt att hantera detta
+
+UTF-16 ekvivalent
+
+FileReader använder default kodning på operativsystemet
+
+---------
+
+Vill man styra dert så InputStreamReader
+
+BufferedReader inström = new BufferedReader ( new InputStreamReader ( new FileInputStream ("lista.txt"), UTF-8));
+
+------
+
+eller mha Scanner
+
+Scanner sc = new Scanner ( new File ( "lista.txt", UTF-8));
+
+------------------------------------------------
+
+Utström:
+PrintWriter utström = new PrintWriter ( new BufferedWriter ( new FileWriter ( "utdata.txt")));
+
+TODO: Kopiering.java & Kopiering2.java
+Terminal respektive JOptionPane
+
+-------------------------------------------
+Läsa - Scanner - BufferedReader
+
+Skriva - PrintWriter - System.out.print / System.out.flush....
+
+------------------------------------------

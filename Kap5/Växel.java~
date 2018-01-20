@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class Växel {
+    public static void main (String[] arg) throws IOException {
+    System.out.print("Hur mycket kostar det?"); //Inte println för att användaren ska kunna svara på samma rad
+    System.out.flush(); //Inbyggd i println men inte i print
+    String s = myIn.readLine();
+    int pris = Integer.parseInt(s);
+    System.out.print("Vad betalar du?");
+    System.out.flush();
+    s = myIn.readLine();
+    int betalat = Integer.parseInt(s);
+    String v = växel(betalat-pris)
+    System.out.print("Växeln är: " + v);
+    }
+
+    public String växel (int n) {
+	int hundra = n / 100;
+	int femtio = (n - 100*hundra) / 50;
+	int tjugo  = (n - 100*hundra - 50*femtio) / 20;
+	int tio    = (n - 100*hundra - 50*femtio - 20*tjugo) / 10;
+	int fem    = (n - 100*hundra - 50*femtio - 20*tjugo - 10*tio) / 5;
+	int en     = (n - 100*hundra - 50*femtio - 20*tjugo - 10*tio - 5*fem);
+    }
+}

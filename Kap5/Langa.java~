@@ -1,0 +1,25 @@
+public class Langa {
+    public static void main (String[] arg) throws FileNotFoundException {
+	System.out.println("Vilka filer ska läsas in?");
+	Scanner sc = new Scanner(System.in);
+	String infil = sc.next();
+	String utfil = sc.next();
+	Scanner myIn = new Scanner(new File(infil));
+	PrintWriter utFil = new PrintWriter(new BufferedWriter(new FileWriter(utfil)));
+
+	while (sc.hasNextLine()) {
+	    String namnadress = myIn.nextLine();
+	    int ålder = myIn.nextInt();
+	    int längd = myIn.nextInt();
+	    double vikt = myIn.nextDouble();
+
+	    if (längd >= 200) {
+		utfil.println(namnadress);
+		utfil.println(ålder + " " + längd + " " + vikt);
+	    }
+	}
+
+	utfil.close();
+	
+    }
+}

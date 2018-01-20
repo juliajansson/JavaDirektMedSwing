@@ -1,0 +1,10 @@
+public class Equals {
+    public static boolean equals (int[] a, int[] b) {
+	boolean lika = false;
+	for (i = 0; i < a.length; i++)
+	    lika = (a[i] == b[i])
+	    if (a[i] != b[i])
+		break;
+	return lika;
+    }
+}

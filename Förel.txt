@@ -1,0 +1,126 @@
+Arrays - flera element av samma klass, bestämmer klass i tilldelningen
+Nackdel med fält - bestämda
+
+Listor - standardklass, följd av element som kommer i viss ordning till skillnad från mängd som inte har ordning.
+Containerklass - innehåller referens till objekt
+
+Container:
+	Listor
+	Mängder
+	Avbildningstabeller
+
+Index - som i arrays 0, 1, ...
+
+Kö - lista, början slut
+
+Stack - lägger inte in saker sist utan lägger till i toppen till stacken, push, pop, top (avläser)
+
+
+import java.util.*; //Innehåller listklasserna
+
+List - generiskt gränssnitt (interface)
+
+LinkedList - generisk klass, innehåller implementeringen. Elementen pekar på andra element.
+
+Generisk - parameter som man kan variera.
+
+
+
+List<String> ls = new LinkedList<>(); //Från Java version 7
+
+Kan aldrig skriva List på högerledet.
+
+
+
+List<String> ls = new ArrayList<>();
+List<Punkt> lp = new ArrayList<>();  -----Parenteserna - parameterlösa konstruktorn -> tom lista
+
+---Lägga in element:
+
+ls.add("EEE") ----Lägger till sist
+
+lp.add(new Punkt(5, 7));
+
+lp.add("ABC") ---FEL!
+
+ls.add(0, "JJJ") ----Lägg in JJJ först
+
+ls.set(1, "AAA");  ----Ändrar med index
+
+ls.remove(3);  ----Tar bort element 3
+
+String t = ls.get(1);  ----Tar elementet på plats 1
+
+ls.add(t); --- Lägger till t sist
+
+Går aldrig att ändra en string
+
+
+
+----Kopiera en lista
+
+List<String> ls2 = new ArrayList<>(ls);
+
+
+----Löpa igenom lista
+
+Sämre lösning:
+for (int i = 0; i<ls.size(); i++)
+    System.out.println(ls.get(i));
+
+Bättre lösning:
+for (String s : ls)
+    System.out.println(s);
+
+---------length - array, en variabel
+---------size - listor, en metod
+
+
+-----subList
+
+for(String s : ls.subList(1,3)) ---element 1 och 2 löps igenom
+	System.out.println(s);
+
+
+-------wrapper class
+innehåller int i sig
+
+List<Integer> li = new LinkedList<>();
+li.add(9);
+li.add(9);
+li.set(2, -4);
+int j = li.get(2); (unboxar -4)
+
+
+-----listor som parametrar
+public static void printList(List<Integer> 1) {
+       for (Integer i : 1)
+       	   System.out.print(i+ " ");
+       System.out.println();
+}
+
+public static void nollBort(List<Integer> 1) {
+       int k;
+       whilie ((k = 1.indexOf(0)) >= 0)
+       	      l.remove(k);
+}
+
+
+
+----skillnad på Int och Integer
+
+Int
+int i=5;
+Integer ii= new Integer(5);
+
+(((Note that every primitive type in Java has an equivalent wrapper class:
+
+byte has Byte
+short has Short
+int has Integer
+long has Long
+boolean has Boolean
+char has Character
+float has Float
+double has Double
+))))

@@ -1,0 +1,3 @@
+Vi beskriver main algoritmen först. Den börjar med att kontrollera att vi programmerat RatNum korrekt först mha RatNumTest2 och sen med egen algoritm ovan. RatNumTest2 testar konstruktorer, och RatNumTest3 testar att vår equals, kopiering och toDouble fungerar.
+
+Nästa steg i main är att en text skrivs ut: "Skriv uttryck på formen a/b ? c/d, där ? är något av tecknen + - * / = <". Sedan startas en while-sats. Här läser den in strängar mha Scanner och filtrerar därmed bort mellanslag. Den kollar att antalet delar och syntaxen är korrekt, isf skapas tre separata textsträngar, som översätts till två rationella tal och en operator mha RatNum. Den kör nu operatorerna givna i RatNum och skriver ut resultatet eller felmeddelande.

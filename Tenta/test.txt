@@ -1,0 +1,17 @@
+Julia Jansson Barnhemsgatan 37 43131 Mölndal
+18 176 172
+Julia Jansson Barnhemsgatan 37 43131 Mölndal 2
+18 176 7.2
+Julia Jansson Barnhemsgatan 37 43131 Mölndal 3
+18 176 720
+Julia Jansson Barnhemsgatan 37 43131 Mölndal 4
+18 176 722
+
+for
+all
+if
+else
+class
+public
+static
+boolean

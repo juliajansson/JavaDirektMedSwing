@@ -1,0 +1,73 @@
+Selection sort - sök minsta och byt
+
+Array m heltal
+
+9 13 6 1 8 12
+
+1 13 6 9 8 12
+
+1 6 13 9 8 12
+
+1 6 8 9 13 12
+
+1 6 8 9 12 13
+
+------------------------------
+
+Sökning i arrayer
+
+Halvering av arrayen ?
+
+Binärsökning - söker det som är i mitten
+
+
+Sök efter talet 60
+
+1 10 20 30 40 60 80
+
+40 60 80
+
+60
+
+Hur många sökningar - proportionellt mot logaritmen av antal element i arrayen
+
+mkt mer effektiv än en linjärsökning
+
+
+
+
+--------------------------------------------------------
+
+Flerdimensionella arrayer - matriser
+Dubbla klamrar
+
+
+int[] [] h;					//Deklarera variabeln
+h = new int[3] [5];				//Skapa utrymme
+
+
+int[] [] h = new int[3] [5]; 			//Mer koncist
+
+
+double[] [] [] treD = new double[4] [6] [3];	//3D
+
+
+Indexering - rad, kolumn
+
+--------------------
+
+Genomlöpning
+
+for (int i = 0; i < h.length; i++) {
+    for (int j = 0; j < h[i].length; j++)
+    	System.out.print(h[i][j] + " ");
+    System.out.println();
+}
+
+for (int[] rad : h) {
+    for (int k : rad)
+    	System.out.print(k + " ");
+    System.out.println();
+}
+
+Array med olika många element i rader / kolumner

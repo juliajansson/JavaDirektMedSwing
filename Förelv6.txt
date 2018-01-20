@@ -1,0 +1,19 @@
+Metoder returnerar värden - skriver inte ut.
+
+BufferedReader eller Scanner för inläsning
+
+Läsa textfiler - inte System.in
+
+Text respektive binärfiler - ljud
+     			   - bild
+			   - program
+
+Textfiler skiljer sig från ordbehandlingsprogram
+
+------------------------------------------------
+
+Textfiler - inströmmar - BufferedReader
+
+BufferedReader inström = new BufferedReader ( new FileReader("lista.txt"));
+
+String t = inström.readLine();

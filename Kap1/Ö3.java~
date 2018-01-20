@@ -1,0 +1,16 @@
+import static javax.swing.JOptionPane.*;
+
+public class Ö3 {
+    public static String main (String[] arg) {
+	String indata;
+	double mg;
+	double lm;
+	indata=showInputDialog("Miles per gallon?");
+	mg=Double.parseDouble(indata);
+	lm=1.607*mg/3.785;
+	showMessageDialog(null, "Det motsvarar" + lm + "l/mil");
+	System.exit(0);
+    }
+}
+	
+	

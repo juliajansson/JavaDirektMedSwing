@@ -1,0 +1,11 @@
+public class Rotation {
+    public static int[] rotera(int[] a, int k) {
+	int[] b = new int[a.length];
+	for (int i = 0; i < a.length; i++) {
+	    int j = (i + k) % a.length;
+	    b[j]=a[i];
+	}
+	return b;
+    }
+	    
+}

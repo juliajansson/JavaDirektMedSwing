@@ -1,0 +1,5 @@
+import java.swing.*;
+
+public static void Grattis (String[] arg) {
+}
+

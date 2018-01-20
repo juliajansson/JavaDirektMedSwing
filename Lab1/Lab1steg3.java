@@ -1,0 +1,44 @@
+
+ import static javax.swing.JOptionPane.*;
+
+ public class Lab1steg3 {
+     private static Boolean skott(int n) {
+         return n % 4 == 0 && (n % 100 != 0 || n % 400 == 0);
+     }
+     
+   public static void main (String[] arg) {
+       while (true) {
+	   String s = showInputDialog("Skriv ett datum på formen åååå-mm-dd");
+	   if (s==null)
+	       break;
+	   int y = Integer.parseInt(s.substring(0, 4));
+	   int m = Integer.parseInt(s.substring(5, 7));
+	   int d = Integer.parseInt(s.substring(8, 10));
+	   
+	   int[] mn = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	   if(skott(y))
+	       mn[1] += 1;
+	   
+	   int antal = 0;
+     
+	   for(int i = 0; i < m - 1; i++) {
+	       antal += mn[i];
+	   }
+
+	   antal += d;
+	   
+	   for(int i = 1754; i < y; i++) {
+	       if(skott(i)) {
+		   antal += 366;
+	       }
+	       else {
+		   antal += 365;
+	       }
+     }
+
+     String[] dagar = {"måndag", "tisdag", "onsdag", "torsdag", "fredag", "lördag", "söndag"};
+     showMessageDialog(null, "Det är en " + dagar[antal % 7]);
+       }
+     System.exit(0);
+   }
+ }

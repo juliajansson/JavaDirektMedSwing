@@ -1,0 +1,47 @@
+public class Kort {
+    //Instansvariabler
+    private int färg; //(1-4)
+    private int valör; //(1-13)
+    
+    //Konstruktorer
+    //sätt begynnelsevärde
+    public Kort (int f, int v) {
+	if (f < 1 || f > 4 || v < 1 || v > 13) {
+	    System.out.println("Felaktig intiering!");
+	    f = v = 1;
+	}
+	else {
+	    färg=f;
+	    valör=v;
+	}
+    }
+
+    //Metoder
+    //gör om kort i int till string
+    public String toString () {
+	if (f == 1)
+	    String kort = "Klöver";
+	else if (f == 2)
+	    String kort = "Ruter";
+	else if (f == 3)
+	    String kort = "Hjärter";
+	else (f == 4)
+	    String kort = "Spader";
+
+	
+	if (v > 1 && v < 11)
+	    kort = kort + v;
+	else if (v == 1)
+	    kort = kort + "Ess";
+	else if (v == 11)
+	    kort = kort + "Knekt";
+	else if (v == 12)
+	    kort = kort + "Dam";
+	else if (v == 13)
+	    kort = kort + "Kung";
+
+	return s;
+	
+    }
+
+}

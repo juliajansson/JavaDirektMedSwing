@@ -1,0 +1,19 @@
+Containers
+
+Listor och avbildningstabeller är kraftfulla
+
+List - LinkedList
+     - ArrayList
+     - Vector - Stack
+
+Gränssnitt - uppräkning av vad en klass ska kunna, kravspecifikation
+
+Köer - parallellism
+
+List<String> l = new LinkedList<>(h);
+
+--------------------------------------
+Collections - fill, sort, copy
+
+Collections.sort(1);
+int k = Collections.binarySearch(11,sökt);

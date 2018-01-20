@@ -1,0 +1,18 @@
+public class Primtal {
+    public static int[] primtal () {
+	int[] primtal = new int[50];
+	boolean prim;
+	int antal = 0;
+	int tal = 1;
+	
+	while (antal < 50) {
+	    tal++;
+	    prim = true;
+	    for (int k = 0; k < antal && prim; k++)
+		if (tal % primtal[k] == 0)
+		    prim = false;
+	    if (prim)
+		primtal[antal++] = tal;
+	    }
+	}
+}

@@ -1,0 +1,66 @@
+public class MyStringBuilder {
+    //Instansvariabler
+    private char[] text;
+    private int längd;
+    private int kapacitet;
+
+    public MyStringBuilder() {
+	text = new char[16];
+	längd = 0;
+	kapacitet = 16;
+    }
+
+    public MyStringBuilder(String s) {
+	längd = s.length();
+	kapacitet = längd + 16;
+	text = new char[kapacitet];
+	for (int i = 0; i < längd; i++)
+	    text[i] = s.charAt(i);
+    }
+
+    public int length() {
+	return längd;
+    }
+
+    public int capacity() {
+	return kapacitet;
+    }
+
+    public void ensureCapacity(int k) {
+	while (kapacitet < k) {
+	    kapacitet = 2*kapacitet;
+	    char[] nytext = new char[kapacitet];
+	    for (int i = 0; i < längd; i++)
+		nytext[i] = text[i];
+	    text = nytext;
+	}
+    }
+
+    public void insert(int p, String s) {
+	int a = s.length();
+	if (p >= 0 && p <= längd) {
+	    if (längd + a > kapacitet) 
+		ensureCapacity(längd + a);
+	    for (int i = p; i < (p + a - 1); i++) {
+		char temp = text[i];
+		text[i] = s.charAt(i-p);
+		text[i+a-1] = temp;
+	    }
+	}
+	else
+	    throw new IndexOutOfBoundsException();
+    }
+
+    public void append(String s) {
+	insert(längd, s);
+    }
+
+    public String substring(int p, int m) {
+	if (p >= 0 && p <= längd && m >= 0 && m <= längd && p <= m) {
+	    //for (int i = p; i <= m-1; i++)
+	}
+	else
+	    throw new IndexOutOfBoundsException();
+    }
+	    
+}

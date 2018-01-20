@@ -1,0 +1,29 @@
+System.out har vi använt
+
+Dialogrutor...
+
+System.in???
+
+In och utmatning - strömmar
+
+import.java.io.*;
+
+public class InputDemo {
+       public static void main (String[] arg) throws IOException{
+       	      BufferedReader input = new BufferedReader
+	      		     	     (new InputStreamReader(System.in));
+	      System.out.println("Vad heter du?");
+	      String s = input.readLine();        //Finns i Bufferedreader
+	      System.out.println("Hej " + s + "!");
+       }
+}
+
+------Språkversioner
+Styr decimalkomma - decimalpunkt
+
+Locale.setDefault(new Locale("sv", "SE"));
+
+----------------
+Formatering i System.out.println
+
+System.out.format("%02d medeltemp %4.lf gr\n", k, t);

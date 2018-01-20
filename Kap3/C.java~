@@ -1,0 +1,14 @@
+public class C {
+    //Klassvariabler
+    private static int totAntal;
+
+    //Konstruktorer
+    public C () {   //varför görs detta?
+	totAntal++;
+    }
+    
+    //Klassmetoder
+    public static int avläsAntal () {
+	return totAntal;
+    }
+}

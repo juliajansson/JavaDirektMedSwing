@@ -1,0 +1,19 @@
+import java.util.*;
+import java.text.*;
+import java.io.*;
+
+public class TextAnalys {
+    public static void main(String[] arg) throws IOException {
+	Collator co = Collator.getInstance();
+	co.setStrength(Collator.PRIMARY);
+	SortedSet<String> m = new TreeSet<String>(co);
+
+	Scanner sc = new Scanner(new File(arg[0]));
+
+	while (sc.hasNext())
+	    m.add(sc.next());
+
+	for (String ord : m)
+	    System.out.println(ord);
+    }
+}
