@@ -1,0 +1,8 @@
+import javax.swing.*;
+
+public class Stapel extends JPanel {
+    private double procentfylld;
+    private boolean vertikal;
+
+    
+}
