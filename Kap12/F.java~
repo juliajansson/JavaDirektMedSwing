@@ -1,0 +1,21 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*
+
+
+public class F extends JFrame {
+    JButton överst = new JButton("Uppe");
+    JTextField första = new JTextField("Skriv här");
+    JButton nederst = new JButton("Nere");
+    
+
+    
+    FocusAdapter hej = new FocusAdapter() {
+	    public void focusGained(FocusEvent e) {
+		första.setBackground(Color.BLUE);
+	    }
+	    public void focusLost(FocusEvent e) {
+		första.setBackground(Color.WHITE);
+	    }
+	};
+}

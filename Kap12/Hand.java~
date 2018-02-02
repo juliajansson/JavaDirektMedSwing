@@ -1,0 +1,34 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Hand() {
+    JButton knapp = new JButton("Om du flyttar din mus hit, kommer den förändras till en hand");
+
+    public Hand() {
+	setLayout(new FlowLayout());
+	add(knapp);
+
+	knapp.addMouseListener(m);
+
+	setSize(400,200);
+	setVisible(true);
+	setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+
+    MouseAdapter m = new MouseAdapter () {
+	    public void mouseEntered(MouseEvent e) {
+		if (e.getComponent() == knapp)
+		    setCursor(getPredefinedCursor(HAND_CURSOR));
+	    }
+	    public void mouseExited(MouseEvent e) {
+		if (e.getComponent() == knapp)
+		    setCursor(getPredefinedCursor(DEFAULT_CURSOR));
+	    }
+	};
+
+    public static void main (String[] arg) {
+	new Hand();
+    }
+    
+

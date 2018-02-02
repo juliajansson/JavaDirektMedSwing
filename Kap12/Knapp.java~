@@ -1,0 +1,31 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Knapp extends JFrame {
+    JButton knapp = new JButton();
+
+    public Knapp () {
+	setLayout(new FlowLayout());
+	add(knapp);
+	
+	knapp.addMouseListener(m);
+
+	pack();
+	setVisible(true);
+	setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+    
+    MouseAdapter m = new MouseAdapter () {
+	    public void MouseEntered(MouseEvent e) {
+		knapp.setBackground(Color.red);
+	    }
+	    public void MouseExited(MouseEvent e) {
+		knapp.setBackground(Color.white);
+	    }
+	};
+
+    public static void main (String[] arg) {
+
+    }
+}
