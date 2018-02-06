@@ -1,0 +1,5 @@
+public abstract class Figur {
+    Punkt p;
+
+    public abstract void area();
+}

@@ -1,0 +1,23 @@
+public class Punkt {
+    int x;
+    int y;
+
+    public Punkt() {
+    }
+
+    public Punkt(int a,int b) {
+	x=a;
+	y=b;
+    }
+    
+    public int getx () {
+	return x;
+    }
+
+    public int gety () {
+	return y;
+    }
+    
+    public String toString() {
+	String s = "(" + x + ", " + y + ")";
+}
