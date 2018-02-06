@@ -1,0 +1,11 @@
+public class Kurs {
+    public String namn;
+    public int hp;
+    public List<Student> ss = new LinkedList<>();
+
+    public String toString() {
+	return namn;
+    }
+
+    
+}
