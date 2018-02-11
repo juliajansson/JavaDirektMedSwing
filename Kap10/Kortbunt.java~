@@ -1,0 +1,55 @@
+ import java.util.*;
+
+ public class Kortbunt {
+   private List<Kort> bunten = new LinkedList<Kort>();
+
+   public void läggÖverst(Kort k) {
+     bunten.add(0, k);
+   }
+
+   public  Kort taBortÖversta() {
+     Kort k = bunten.get(0);
+     bunten.remove(0);
+     return k;
+   }
+
+   public int antalKort() {
+     return bunten.size();
+   }
+
+   public void slängKorten() {
+     bunten.clear();
+   }
+
+   public Kort tittaPå(int nr) {
+     return bunten.get(nr);
+   }
+
+   public Kort taBort(int nr) {
+     Kort k = bunten.get(nr);
+     bunten.remove(nr);
+     return k;
+   }
+
+   public int sök(KortFarg f, KortSlag s) {
+     int i = 0;
+     for (Kort k : bunten)
+       if (k.färg()==f && k.slag()==s)
+         return i;
+       else
+         i++;
+     return -1;
+   }
+
+   public void nyKortlek() {
+     bunten.clear();
+     for (KortFarg f : KortFarg.values())
+       for (KortSlag s : KortSlag.values())
+         bunten.add(new Kort(f, s));
+   } 
+
+   public void blanda() {
+     Collections.shuffle(bunten);
+   }
+ }
+
