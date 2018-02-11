@@ -1,0 +1,10 @@
+import java.awt.*;
+import javax.swing.*;
+
+public Tangentbord extends JFrame {
+    JLabel textruta = new JLabel();
+
+    public Tangentbord() {
+	setLayout(new gridLayout(1,2));
+	add(textruta); add(tangentbord);
+}
