@@ -1,0 +1,44 @@
+public class Varelse {
+    public static final int ORM = 0;
+    public static final int TROLL = 1;
+    public static final int SPINDEL = 2;
+
+    public int typ;//innehåller en av typerna ovan
+    public int energi = 100;//0=död, 100=full styrka
+    public String namn;
+
+    public Varelse(String namn, int typ) {
+	this.namn = namn;
+	this.typ = typ;
+    }
+}
+
+class Gäng {
+    private Varelse[] medlemmar;
+
+    public Gäng(int storlek) {
+	medlemmar  = new Varelse[storlek];
+    }
+
+    public void läggTill(Varelse v, int index) {
+	medlemmar[index] = v;
+    }
+
+    public int gemensamSkada() {
+	int tot = 0;
+	for (int i = 0; i < medlemmar.length; i++)
+	    if (medlemmar[i] != null) {
+		if (medlemmar[i].typ == Varelse.ORM)
+		    tot += 10*medlemmar[i].energi;
+		else if (medlemmar[i].typ == Varelse.TROLL)
+		    tot += 5*medlemmar[i].energi;
+		else if (medlemmar[i].typ == Varelse.TROLL) {
+		    if (medlemmar[i].energi > 0)
+			tot += 100;
+		    else
+			tot += 0;
+		}
+	    }
+	return tot;
+    }
+}

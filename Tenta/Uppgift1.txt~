@@ -1,0 +1,18 @@
+interface A {
+	  abstract int m1(int i); //ok. abstrakt metod av int till int
+	  }
+
+interface B implements A { //ska vara extends inte implements
+	  public int k = 0; //initieras som statisk konstant automatiskt
+	  public int m2(int i); //ok. abstrakt metod av int till int
+	  }
+
+interface C {
+	  int i = 0; //initieras som publik statisk konstant automatiskt
+	  int m3(int i); //ok eftersom det är abstrakt metod
+	  }
+
+public abstract class D extends C implements B { //klass kan inte utöka ett gränssnitt
+       public D(int i) {k = i;} //k kan inte omdefinieras då det är en konstant
+       public int m4(int i); //har ej definierats som abstrakt
+       }
