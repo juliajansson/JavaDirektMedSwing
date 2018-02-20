@@ -1,0 +1,51 @@
+a)
+
+interface A {
+	  abstract int m1(int i); //ok. abstrakt metod av int till int
+	  }
+
+interface B implements A { //ska vara extends inte implements
+	  public int k = 0; //initieras som statisk konstant automatiskt
+	  public int m2(int i); //ok. abstrakt metod av int till int
+	  }
+
+interface C {
+	  int i = 0; //initieras som publik statisk konstant automatiskt
+	  int m3(int i); //ok eftersom det är abstrakt metod
+	  }
+
+public abstract class D extends C implements B { //klass kan inte utöka ett gränssnitt
+       public D(int i) {k = i;} //k kan inte omdefinieras då det är en konstant
+       public int m4(int i); //har ej definierats som abstrakt
+       }
+
+
+b)
+
+public interface Vehicle {...}
+public class Car implements Vehicle {...}
+public class Suv extends Car {...}
+
+Vehicle v = new Car(); //ok
+Vehicle v = new Suv(); //ok
+Vehicle v = new Vehicle(); //ej tillåtet eftersom Vehicle är ett gränssnitt och ej kan initieras ensamt
+Car c = new Suv(); //ok
+Car c = new Vehicle(); //ej tillåtet eftersom Vehicle är ett gränssnitt och ej kan initieras ensamt
+Suv s = new Suv(); //ok
+Suv s = new Car(); //ej tillåtet då Suv är subklass till Car
+
+c)
+
+if (li != null)
+   for (int i = 0; i < li.size(); i++)
+       if (li.get(i) != null && li.get(i) == 0)
+       	  li.remove(i);
+
+
+Om man har 2 nollor bredvid varandra så funkar det inte med indexeringen. Först tas nollan på plats i bort men då flyttas nollan på plats i+1 till plats i, så då tas ej den nollan bort.
+
+Man kan undvika detta genom att gå listan baklänges.
+
+Ett alternativ är att lägga till en if sats efter sista raden som kollar om det finns en till nolla på i:te platsen (med indexOf(0)==i) och en rekursiv anropan av metoden. Givet att hela ifsatsen sätts in i en metod.
+
+
