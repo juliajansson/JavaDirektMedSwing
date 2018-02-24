@@ -1,0 +1,28 @@
+import java.awt.*;
+import java.swing.*;
+
+public class Tegelvägg extends JFrame {
+    private int bredd;
+    private int höjd;
+
+    public Tegelvägg (int b, int h) {
+	bredd = b;
+	höjd = h;
+
+	pack();
+	setVisible(true);
+	setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+
+    public void paintComponent (Graphics g) {
+	super.paintComponent(g);
+	int width = getWidth();
+	int height = getHeight();
+	g.drawRect(0,0,bredd,höjd);
+	
+    }
+
+    public static void main (String[] args) {
+	new Tegelvägg();
+    }
+}
