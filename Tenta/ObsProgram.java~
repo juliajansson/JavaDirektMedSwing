@@ -1,0 +1,55 @@
+import java.io.*;
+import java.util.*;
+
+public class ObsProgram {
+    public static void main (String[] args) {
+	Scanner sc = new Scanner(new File(obs.txt));
+	List<Observation> l = new LinkedList<>();
+	while (sc.hasNext()) {
+	    Observation obs = new Observation();
+	    obs.nr = sc.nextInt();
+	    obs.tid.tim = sc.nextInt();
+	    obs.tid.min = sc.nextInt();
+	    obs.temp = sc.nextInt();
+	    obs.vindhast = sc.nextDouble();
+	    obs.vindrikt = sc.nextInt();
+	    l.add(obs);
+	}
+	sort(l);
+	for (Observarion o : l)
+	    System.out.format("%d %02d:%02d %03n /n",o.nr, o.tid.tim, o.tid.min, o.temp);
+    }
+	
+}
+
+class Klockslag implements Comparable<Klockslag> {
+    int tim;
+    int min;
+
+    public int compareTo(Klockslag k) {
+	if (tim < k.tim || (tim == k.tim && min < k.min))
+	    return -1;
+	else if (tim < k.tim || (tim == k.tim && min > k.min))
+	    return 1;
+	else
+	    return 0;
+    }
+
+    @Override
+    public String toString() {
+	return String.format("%02d:%02d", tim, min);
+    }
+}
+
+class Observation implements Comparable<Observation> {
+    int nr;
+    Klockslag rid = new Klockslag();
+    double temp;
+    double vindhast;
+    int vindrikt;
+
+    public int compareTo(Observation annan) {
+	return tid.compareTo(annan.tid);
+    }
+}
+
