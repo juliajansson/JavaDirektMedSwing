@@ -1,0 +1,38 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Femton extends JFrame implements ActionListener {
+    List<Ruta> knappar = new ArrayList<>();
+
+    public Femton() {
+	setLayout(GridLayout(4,4))
+	
+	for (int i = 0; i<=15; i++)
+	    knappar.add(new Ruta(i / 4, i % 4, 15-i)
+
+
+	setSize(400,400);
+	setVisible(true);
+	setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+
+}
+
+class Ruta extends JButton {
+    int rad;
+    int kol;
+    String tal;
+
+    public Ruta() {
+    }
+
+    public Ruta(int r, int k, int t) {
+	rad = r;
+	kol = k;
+	if (t == 0)
+	    tal = "";
+	else
+	    tal = t.toString();
+    }
+}

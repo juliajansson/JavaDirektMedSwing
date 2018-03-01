@@ -15,7 +15,7 @@ public class C {
 	     r = 3;
 	     }
 
-Vi får att första elementet i x blir 1. y pekar nu på samma, ändrade, x. När man tar y[0]=2 så både x och ys första element är 1. k blir inte 3!!!! Alltså får vi utskriften 5.
+Vi får att första elementet i x blir 1. y pekar nu på samma, ändrade, x. När man tar y[0]=2 händer ingenting???. k blir naturligt 3. Alltså får vi utskriften 5.
 
 1b)
 
