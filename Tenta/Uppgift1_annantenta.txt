@@ -1,0 +1,56 @@
+1a)
+
+public class C {
+       public static void main (String[] arg) {
+       	      int k = 1;
+	      int[] x = {0,1,2,3};
+	      int[] y = x;
+	      lurig(x,y,k); 
+	      System.out.println(x[0] + k + y[0]);
+	      }
+
+      public static void lurig(int[] p, int[] q, int r) {
+      	     p[0] = 1;
+	     q[0] = 2;
+	     r = 3;
+	     }
+
+Vi får att första elementet i x blir 1. y pekar nu på samma, ändrade, x. När man tar y[0]=2 händer ingenting???. k blir naturligt 3. Alltså får vi utskriften 5.
+
+1b)
+
+class EnKlass {
+       private int x, y;
+       private static int z; \\Ändringsbar men konstant det sista värdet
+
+       public EnKlass(int a, int b, int c) {
+       	      x = a;
+	      y = b;
+	      z = c;
+       }
+	      
+      public String toString() {
+      	     return x + " " + y + " " + z;
+      }
+}
+
+public class StatTest {
+       public static void main(String[] s) {
+       	      EnKlass a = new EnKlass(1,2,3);
+	      EnKlass b = new EnKlass(4,5,6);
+	      System.out.println(a);
+	      System.out.println(b);
+       }
+}
+
+Utskriften blir "1 2 6", "2 4 6", eftersom z senast ändrades till 6.
+
+1c)
+
+List<Integer> l1 = new List<Integer>() //Error - interface List could not be initiated
+List<double> l2 = new ArrayList<double>() //Error - double is a primitive type
+LinkedList<String> l3 = new LinkedList<String>(); //Ok
+List<l3> l4 = new LinkedList<l3>(); //Error - l3 is not a type
+LinkedList<String> l5 = new ArrayList<String>(); //Error - ArrayList is not subclass to LinkedList
+List<String> l6 = new LinkedList<String>(l3);
+
