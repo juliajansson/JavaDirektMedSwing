@@ -1,0 +1,23 @@
+import javax.swing.*;
+import java.util.*;
+
+public class Spelplan extends Jpanel {
+    char[][] rutor = new char[3][3];
+
+    public Spelplan() {
+	for (int i = 0; i < 3; i++)
+	    for (int j = 0; j < 3; j++)
+		rutor[i][j] = " ";
+	setBackground(Color.white);
+    }
+
+    public char avläs(int rad, int kol) {
+	return rutor[rad][kol];
+    }
+
+    public void placera(char tecken, int rad, int kol) {
+	rutor[rad][kol]=tecken;
+	return;
+    }
+
+}
