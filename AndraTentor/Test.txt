@@ -1,0 +1,19 @@
+Utskriften blir:
+
+flute //Shoe anropar flutes toString()
+shoe 1 //Shoe har omdefinierad metod1
+flute 2 //Shoe anropar Flutes metod2
+
+flute //Flute har omdefinierad toString()
+blue 1 //Flute anropar Blues metod1
+flute 2 //Flute har omdefinierad metod2
+
+//Inga konstigeter här, Moo anropar sig själv
+moo 
+moo 1
+moo 2
+
+//Blue har endast omdefinierat metod1, resten som i Moo
+moo
+blue 1
+moo 2

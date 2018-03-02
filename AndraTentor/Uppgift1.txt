@@ -1,0 +1,12 @@
+1b)
+
+String str = "Hejsan";
+String str2 = str.substring(0,3); //"Hej"
+if (str2 == "Hej")
+   System.out.println("Lika");
+
+
+Programmet skriver inte ut nånting eftersom referenserna inte är lika.
+
+1c)
+CENTER är en final static int i JLabel som centrerar
